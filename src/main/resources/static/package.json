@@ -1,0 +1,7 @@
+{
+  "name": "spring-react",
+  "version": "0.1.0",
+  "description": "Starter Template for a React + Spring Boot project",
+  "dependencies": {
+  }
+}
