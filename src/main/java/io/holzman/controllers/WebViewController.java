@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class WebViewController {
     @RequestMapping(method = RequestMethod.GET, value = "/web")
     public String index(){
-        ModelAndView modelAndView = new ModelAndView("index");
         return "index";
     }
 }
