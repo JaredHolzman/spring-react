@@ -1,6 +1,6 @@
 var path = require('path');
 
-var SRC  = path.join(__dirname, 'App.jsx');
+var SRC  = path.join(__dirname, 'index.jsx');
 var DEST = path.join(__dirname,'../resources/static/dist/');
 
 var config = {

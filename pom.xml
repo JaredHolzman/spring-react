@@ -12,7 +12,7 @@
 	</parent>
 
 	<groupId>io.holzman</groupId>
-	<artifactId>react-spring</artifactId>
+	<artifactId>spring-react</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
