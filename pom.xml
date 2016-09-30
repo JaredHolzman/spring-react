@@ -93,6 +93,15 @@
 							<arguments>install</arguments>
 						</configuration>
 					</execution>
+					<execution>
+					<id>webpack bundle</id>
+					<goals>
+						<goal>npm</goal>
+					</goals>
+					<configuration>
+						<arguments>run build</arguments>
+					</configuration>
+				</execution>
 				</executions>
 			</plugin>
 		</plugins>

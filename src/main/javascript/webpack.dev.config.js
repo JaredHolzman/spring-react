@@ -2,79 +2,39 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var SRC = path.join(__dirname, 'index.jsx');
+var SRC = path.join(__dirname, 'index.js');
 var DEST = path.join(__dirname, '../resources/static/dist/');
-const PUBLPATH = 'http://localhost:9090/bundle/';
-// 'react-hot-loader/patch',
-//     'webpack-dev-server/client?http://localhost:$9090',
-//     'webpack/hot/only-dev-server',
+const PUBLPATH = 'http://localhost:3000/bundle/';
 
-var config = {
-    entry: {
-        main: [
-            'webpack-hot-middleware/client',
-            './index.jsx'
-        ]
-    },
+module.exports = {
+    devtool: 'eval',
+    entry: [
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
+        './index.js'
+    ],
     resolve: {
-        extensions: ['', '.js', '.jsx'],
-        root: path
+        extensions: ['', '.js']
     },
     output: {
-        path: DEST,
+        path: path.join(__dirname, '../resources/static/dist'),
         filename: 'bundle.js',
-        publicPath: 'http://localhost:3000/'
+        publicPath: '/static/'
+    },
+    module: {
+        loader: [{
+            test: /\.js$/,
+            loaders: ['react-hot', 'jsx?harmony'],
+            include: SRC
+        }]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify('development')
             }
-        })//
-        // new HtmlWebpackPlugin({
-        //     title: 'React Spring',
-        //     template: path.join(__dirname, '../resources/templates/index.html')
-        // })
-    ],
-    module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                loaders: ['babel'],
-                include: SRC
-            }
-        ]
-    },
-    devServer: {
-    hot: true,
-        inline: true,
-        port: 9090,
-        proxy: {
-        '/**': {
-            target: 'http://localhost:8080',
-                secure: false,
-                // node-http-proxy option - don't add /localhost:8080/ to proxied request paths
-                prependPath: false
-        }
-    },
-    publicPath: PUBLPATH
-},
-    devtool: 'source-map'
+        })
+    ]
 };
-// devServer: {
-//     hot: true,
-//         inline: true,
-//         port: 9090,
-//         proxy: {
-//         '/*': {
-//             target: 'http://localhost:8080',
-//                 secure: false,
-//                 // node-http-proxy option - don't add /localhost:8080/ to proxied request paths
-//                 prependPath: false
-//         }
-//     },
-//     publicPath: '/static/'
-// },
-module.exports = config;
