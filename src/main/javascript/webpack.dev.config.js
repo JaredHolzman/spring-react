@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var SRC = path.join(__dirname, '/src/index');
-var DEST = path.join(__dirname, '../resources/static/dist/');
+var DEST = path.join(__dirname, '../resources/dist/');
 const PUBLPATH = 'http://localhost:3000/web';
 
 module.exports = {

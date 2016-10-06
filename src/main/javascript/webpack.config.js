@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var SRC  = path.join(__dirname, '/src/index');
-var DEST = path.join(__dirname,'../resources/static/dist/');
+var DEST = path.join(__dirname,'../resources/dist/');
 
 var config = {
     entry: SRC,
