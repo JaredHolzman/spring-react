@@ -1,29 +1,42 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var SRC = path.join(__dirname, 'index.js');
+var SRC = path.join(__dirname, '/src/index');
 var DEST = path.join(__dirname, '../resources/static/dist/');
-const PUBLPATH = 'http://localhost:3000/bundle/';
+const PUBLPATH = 'http://localhost:3000/web';
 
 module.exports = {
-    devtool: 'eval',
+    devtool: 'inline-source-map',
     entry: [
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
-        './src/index'
+        'webpack-hot-middleware/client',
+        SRC
     ],
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
+        path: DEST,
+        filename: '[name].js',
+        publicPath: PUBLPATH
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify('development')
+            }
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Spring + React',
+            template: path.join(__dirname, '../resources/templates/index.html')
+        })
     ],
+    resolve: {
+        extensions: ['', '.js'],
+        root: path.join(__dirname, 'src')
+    },
     module: {
         loaders: [{
             test: /\.js$/,
-            loaders: ['babel'],
+            loaders: ['babel?cacheDirectory'],
             include: path.join(__dirname, 'src')
         }]
     },
