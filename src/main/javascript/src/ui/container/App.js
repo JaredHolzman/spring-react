@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import App from 'component/App';
 
-export default class App extends Component {
+class AppContainer extends Component {
 
     static propTypes = {
         children: PropTypes.node
@@ -10,7 +11,7 @@ export default class App extends Component {
     render() {
         return (
             <div id="application">
-                <h1>Hello, World!</h1>
+                <App/>
             </div>
         );
     }
@@ -22,4 +23,4 @@ let mapStateToProps = () => ({}),
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(App);
+)(AppContainer);
