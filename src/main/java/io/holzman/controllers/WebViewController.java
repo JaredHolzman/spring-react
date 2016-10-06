@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class WebViewController {
-    @RequestMapping(method = RequestMethod.GET, value = "/web")
+    @RequestMapping(method = RequestMethod.GET, value = "/web/**")
     public String index(){
         return "index";
     }

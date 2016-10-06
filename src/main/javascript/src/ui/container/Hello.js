@@ -1,17 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import HelloComponent from 'component/HelloComponent';
 
-class App extends Component {
-
-    static propTypes = {
-        children: PropTypes.node
-    };
+class Hello extends Component {
 
     render() {
         return (
             <div id="application">
-                <h4>APP</h4>
-                {/*{this.props.children}*/}
+                <HelloComponent/>
             </div>
         );
     }
@@ -23,4 +19,4 @@ let mapStateToProps = () => ({}),
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(App);
+)(Hello);
