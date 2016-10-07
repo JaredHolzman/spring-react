@@ -16,13 +16,14 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/api")
-public class SomethingController {
+public class StubbedController {
     @RequestMapping(method = RequestMethod.GET, value = "yolo")
     HttpEntity<List<Integer>> thingy(){
         List<Integer> lst = new LinkedList<>();
-        lst.add(99);
-        lst.add(100);
-        lst.add(101);
+        lst.add(1);
+        lst.add(2);
+        lst.add(3);
+        lst.add(4);
         return new ResponseEntity<>(lst, HttpStatus.OK);
     }
 }
