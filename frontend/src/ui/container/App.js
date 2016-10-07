@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { getSession } from 'reducers/authentication';
-import { setLocale } from 'reducers/locale';
 import counterpart from 'counterpart';
 
 import 'stylus/main.styl';
@@ -29,7 +27,6 @@ export class App extends Component {
   }
 
   render() {
-    const {currentLocale, setLocale} = this.props;
     const menuItems = [
       {label: 'Home', link: '/'},
       {label: 'Hello', link: '/hello'},
@@ -38,7 +35,7 @@ export class App extends Component {
 
     return (
       <div id="application">
-        <TopMenu items={menuItems} currentLocale={currentLocale} setLocale={setLocale}/>
+        <TopMenu items={menuItems} />
         {this.props.children}
       </div>
     );
@@ -46,6 +43,6 @@ export class App extends Component {
 }
 
 export default connect(
-  state => ({isAuthenticated: state.authentication.isAuthenticated, currentLocale: state.locale.currentLocale}),
-  {getSession, setLocale}
+  state => ({}),
+  {}
 )(App);
