@@ -7,7 +7,7 @@ import Goodbye from 'container/Goodbye';
 
 
 export default (onLogout) => (
-  <Route path="/web" name="app" component={App}>
+  <Route path="/" name="app" component={App}>
     <Route path="hello" component={Hello}/>
     <Route path="goodbye" component={Goodbye}/>
   </Route>

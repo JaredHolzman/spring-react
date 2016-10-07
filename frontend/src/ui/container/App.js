@@ -32,8 +32,8 @@ export class App extends Component {
     const {currentLocale, setLocale} = this.props;
     const menuItems = [
       {label: 'Home', link: '/'},
-      {label: 'Hello', link: '/web/hello'},
-      {label: 'Goodbye', link: '/web/goodbye'}
+      {label: 'Hello', link: '/hello'},
+      {label: 'Goodbye', link: '/goodbye'}
     ];
 
     return (

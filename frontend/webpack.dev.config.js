@@ -7,13 +7,13 @@ var nib = require('nib');
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-dev-server/client',
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
-    publicPath: 'http://localhost:3000/web'
+    publicPath: 'http://localhost:3000/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -54,7 +54,7 @@ module.exports = {
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8080/web',
+        target: 'http://localhost:8080',
         secure: false,
         // node-http-proxy option - don't add /localhost:8080/ to proxied request paths
         prependPath: false
