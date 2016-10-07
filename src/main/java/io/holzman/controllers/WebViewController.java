@@ -1,9 +1,12 @@
 package io.holzman.controllers;
-//
+
 //import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.servlet.ModelAndView;
+//
+//import javax.servlet.http.HttpServletRequest;
 //
 ///**
 // * Created by jared on 9/10/16.
@@ -12,15 +15,27 @@ package io.holzman.controllers;
 //@Controller
 //public class WebViewController {
 //
-//    @RequestMapping(method = RequestMethod.GET, value = "/")
-//    public String indexAction() {
-//        return "redirect:web";
+////    @RequestMapping(method = RequestMethod.GET, value = "/")
+////    public String indexAction() {
+////        return "redirect:web";
+////    }
+//
+//    @RequestMapping(method = RequestMethod.GET, value = {"/", "/hello"})
+//    public String index(Model model, HttpServletRequest request){
+////        ModelAndView modelAndView = new ModelAndView("index");
+////        populateModel(model, request);
+//        return "index";
+//
 //    }
 //
-//    @RequestMapping(method = RequestMethod.GET, value = "/web/**")
-//    public ModelAndView index(){
-//        ModelAndView modelAndView = new ModelAndView("index");
-//        return modelAndView;
+//
+//    private static void populateModel(Model model, HttpServletRequest request) {
+//        model.addAttribute("__requestPath", getRequestPath(request));
+//    }
+//
+//    private static String getRequestPath(HttpServletRequest request) {
+//        String queryString = request.getQueryString();
+//        return request.getRequestURI() + (queryString == null ? "" : "?" + queryString);
 //    }
 //}
 

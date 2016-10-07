@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var SRC = path.join(__dirname, '/src/index');
 var DEST = path.join(__dirname, '../resources/dist/');
-const PUBLPATH = 'http://localhost:3000/';
+const PUBLPATH = 'http://localhost:3000';
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -13,7 +13,7 @@ module.exports = {
         './src/index'
     ],
     output: {
-        path: DEST,
+        path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
         publicPath: PUBLPATH
     },
@@ -26,7 +26,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'Spring + React',
-            template: path.join(__dirname, '../resources/templates/index.html')
+            template: path.join(__dirname, 'assets/index.html')
         })
     ],
     resolve: {
@@ -45,7 +45,7 @@ module.exports = {
         hot: true,
         port: 3000,
         proxy: {
-            '/**': {
+            '/api': {
                 target: 'http://localhost:8080',
                 secure: false,
                 // node-http-proxy option - don't add /localhost:8080/ to proxied request paths
