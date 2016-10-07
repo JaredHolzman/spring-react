@@ -31,7 +31,7 @@ var config = {
             {
                 test: /\.js?$/,
                 loaders: ['babel'],
-                include: SRC
+                include: path.join(__dirname, 'src')
             }
         ]
     }

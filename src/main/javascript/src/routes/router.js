@@ -5,8 +5,8 @@ import Hello from 'container/Hello';
 import Goodbye from 'container/Goodbye';
 
 export default () => (
-    <Route path="/web" name="app" component={App}>
-        <IndexRedirect to="/web/goodbye"/>
+    <Route path="/" name="app" component={App}>
+        <IndexRedirect to="/hello"/>
 
         <Route path="hello">
             <IndexRoute component={Hello}/>

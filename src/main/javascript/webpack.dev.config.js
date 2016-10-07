@@ -4,17 +4,17 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var SRC = path.join(__dirname, '/src/index');
 var DEST = path.join(__dirname, '../resources/dist/');
-const PUBLPATH = 'http://localhost:3000/web';
+const PUBLPATH = 'http://localhost:3000/';
 
 module.exports = {
     devtool: 'inline-source-map',
     entry: [
         'webpack-hot-middleware/client',
-        SRC
+        './src/index'
     ],
     output: {
         path: DEST,
-        filename: '[name].js',
+        filename: 'bundle.js',
         publicPath: PUBLPATH
     },
     plugins: [
