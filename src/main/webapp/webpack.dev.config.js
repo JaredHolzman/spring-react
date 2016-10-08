@@ -7,7 +7,7 @@ var nib = require('nib');
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-    'webpack-dev-server/client',
+    'webpack-hot-middleware/client',
     './src/index'
   ],
   output: {
