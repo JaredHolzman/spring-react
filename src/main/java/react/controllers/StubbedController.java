@@ -17,7 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/api")
 public class StubbedController {
-    @RequestMapping(method = RequestMethod.GET, value = "yolo")
+    @RequestMapping(method = RequestMethod.GET, value = "stub")
     HttpEntity<List<Integer>> thingy(){
         List<Integer> lst = new LinkedList<>();
         lst.add(1);
