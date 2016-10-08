@@ -99,7 +99,7 @@
 						<goal>npm</goal>
 					</goals>
 					<configuration>
-						<arguments>run build</arguments>
+						<arguments>run bundle</arguments>
 					</configuration>
 				</execution>
 				</executions>
