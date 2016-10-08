@@ -9,9 +9,9 @@ mvn clean install
 ```
 The maven frontend plugin is used to build the frontend components as well.
 
-To run the hot-reload dev server, first run the Spring Application and then execute
+To run the hot-reload dev server, first start the Spring Application by running 'BootReactApplication.java', and then execute
 ```
 npm run dev
 ```
-
+in the 'src/main/webapp' directory.
 
