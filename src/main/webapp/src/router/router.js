@@ -7,9 +7,9 @@ import Goodbye from 'container/Goodbye';
 
 
 const Routes = (
-  <Route path="/" name="app" component={App}>
-    <Route path="hello" component={Hello}/>
-    <Route path="goodbye" component={Goodbye}/>
+  <Route path="/" name="app" component={Hello}>
+    {/*<Route path="hello" component={Hello}/>*/}
+    {/*<Route path="goodbye" component={Goodbye}/>*/}
   </Route>
 );
 
