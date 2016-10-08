@@ -27,10 +27,6 @@ public class SinglePageAppConfig extends WebMvcConfigurerAdapter {
       .addResourceLocations("classpath:/static/")
       .resourceChain(false)
       .addResolver(new PushStateResourceResolver());
-//    registry.addResourceHandler("/hello/**")
-//            .addResourceLocations("classpath:/static/")
-//            .resourceChain(false)
-//            .addResolver(new PushStateResourceResolver());
   }
 
   private class PushStateResourceResolver implements ResourceResolver {

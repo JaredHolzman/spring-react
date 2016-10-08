@@ -1,4 +1,4 @@
-package react.config;
+package react.controllers;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
