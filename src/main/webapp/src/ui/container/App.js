@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import counterpart from 'counterpart';
 
 import 'stylus/main.styl';
 
