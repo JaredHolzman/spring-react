@@ -6,9 +6,11 @@ import Hello from 'container/Hello';
 import Goodbye from 'container/Goodbye';
 
 
-export default (onLogout) => (
+const Routes = (
   <Route path="/" name="app" component={App}>
     <Route path="hello" component={Hello}/>
     <Route path="goodbye" component={Goodbye}/>
   </Route>
 );
+
+export default Routes;

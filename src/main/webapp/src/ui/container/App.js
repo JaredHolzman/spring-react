@@ -22,10 +22,6 @@ const TopMenu = (props) => {
 
 export class App extends Component {
 
-  componentDidMount() {
-    this.props.getSession();
-  }
-
   render() {
     const menuItems = [
       {label: 'Home', link: '/'},

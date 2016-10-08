@@ -7,7 +7,7 @@ import { browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import { Router } from 'react-router';
-import getRoutes from 'router/router';
+import Routes from 'router/router';
 
 const devTools = process.env.NODE_ENV === 'development' ? <DevTools /> : null;
 
@@ -18,7 +18,7 @@ ReactDOM.render(
     <Provider store={store}>
         <div>
             {devTools}
-            <Router history={history} routes={getRoutes()}/>
+            <Router history={history} routes={Routes}/>
         </div>
     </Provider>,
     document.getElementById('root')
