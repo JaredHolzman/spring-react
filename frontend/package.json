@@ -3,10 +3,9 @@
   "version": "0.0.1",
   "description": "Spring boot and react frontend",
   "scripts": {
-    "start": "node server.js",
     "bundle": "cross-env NODE_ENV=production webpack -p --optimize-dedupe",
     "test": "cross-env NODE_ENV=test mocha",
-    "dev": "webpack-dev-server --config webpack.dev.config.js"
+    "dev": "NODE_ENV=development node server.js"
   },
   "devDependencies": {
     "babel": "^6.5.2",
