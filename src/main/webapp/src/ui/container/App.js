@@ -42,7 +42,7 @@ export class App extends Component {
     }
 }
 
-export default connect(
-    (state) => ({}),
-    {fetchStub}
-)(App);
+const maStateToProps = (state) => {};
+const mapDispatchToProps = {fetchStub};
+
+export default connect(state => ({}), {fetchStub})(App);
