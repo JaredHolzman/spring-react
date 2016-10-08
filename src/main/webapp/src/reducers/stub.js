@@ -9,7 +9,6 @@ const initialState = {
 export default function stubReducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_STUB_SUCCESS:
-            console.log(action);
             return {
                 ...state,
                 items: action.result.data
