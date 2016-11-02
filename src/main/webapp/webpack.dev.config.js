@@ -24,8 +24,8 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      title: 'Boot React',
-      template: path.join(__dirname, 'assets/index-template.html')
+      title: 'Spring React',
+      template: path.join(__dirname, 'assets/index.html')
     })
   ],
   resolve: {
@@ -38,8 +38,15 @@ module.exports = {
       loaders: ['babel?cacheDirectory'],
       include: path.join(__dirname, 'src')
     }, {
-      test: /\.styl$/,
-      loaders: ['style-loader', 'css-loader', 'stylus-loader']
+      test: /\.css/,
+      loader: "style-loader!css-loader"
+      //"style-loader!css-loader?modules"
+    }, {
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+    }, {
+      test: /\.png$/,
+      loader: "file-loader"
     }, {
       test: /\.json/,
       loaders: ['json-loader']

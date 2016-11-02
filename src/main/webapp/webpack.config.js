@@ -11,7 +11,7 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../resources/static'),
     filename: '[name].js'
   },
   plugins: [
@@ -26,8 +26,8 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      title: 'Boot React',
-      template: path.join(__dirname, 'assets/index-template.html')
+      title: 'Spring React',
+      template: path.join(__dirname, '../resources/static/index.html')
     }),
     new webpack.DefinePlugin({
       "process.env": {
@@ -39,7 +39,7 @@ module.exports = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin('styles.css')
+    // new ExtractTextPlugin('styles.css')
   ],
   resolve: {
     extensions: ['', '.js'],
@@ -54,11 +54,18 @@ module.exports = {
     ],
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['babel?cacheDirectory'],
       include: path.join(__dirname, 'src')
     }, {
-      test: /\.styl$/,
-      loader: ExtractTextPlugin.extract('css-loader!stylus-loader')
+      test: /\.css/,
+      loader: "style-loader!css-loader"
+      //"style-loader!css-loader?modules"
+    }, {
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+    }, {
+      test: /\.png$/,
+      loader: "file-loader"
     }, {
       test: /\.json/,
       loaders: ['json-loader']
