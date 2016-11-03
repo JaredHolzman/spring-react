@@ -3,6 +3,5 @@
 }
 
 .navbar-default {
-    background-image: none !important;
-    background-color: #880000 !important;
+    background: #880000 none !important;
 }
