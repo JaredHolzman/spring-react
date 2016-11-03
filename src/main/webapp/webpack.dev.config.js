@@ -40,7 +40,6 @@ module.exports = {
     }, {
       test: /\.css$/,
       loaders: ['style', 'css']
-      //"style-loader!css-loader?modules"
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
