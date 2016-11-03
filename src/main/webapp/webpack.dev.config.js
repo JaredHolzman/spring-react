@@ -25,7 +25,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Spring React',
-      template: path.join(__dirname, 'assets/index.html')
+      template: path.join(__dirname, 'assets/index-template.html')
     })
   ],
   resolve: {

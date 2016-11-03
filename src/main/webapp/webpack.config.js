@@ -27,7 +27,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Spring React',
-      template: path.join(__dirname, '../resources/static/index.html')
+      template: path.join(__dirname, 'assets/index-template.html')
     }),
     new webpack.DefinePlugin({
       "process.env": {

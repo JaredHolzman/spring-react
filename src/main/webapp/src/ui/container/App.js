@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchStub} from 'actions/stub';
 import FetchDataComponent from 'component/FetchDataComponent';
 import TopNav from 'component/TopNav';
+// import 'style/css/boostrap.css';
 
 export class App extends Component {
 
@@ -10,6 +11,7 @@ export class App extends Component {
 
         return (
             <div id="application">
+                {/*<link rel='stylesheet' href='style/css/bootstrap.css' />*/}
                 <TopNav/>
                 {this.props.children}
                 <FetchDataComponent
