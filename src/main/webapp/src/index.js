@@ -8,7 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 import { Router } from 'react-router';
 import Routes from 'router/router';
-import 'style/css/boostrap.min.css';
+// import 'css/boostrap.min.css';
 
 const devTools = process.env.NODE_ENV === 'development' ? <DevTools /> : null;
 

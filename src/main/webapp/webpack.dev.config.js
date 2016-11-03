@@ -38,8 +38,8 @@ module.exports = {
       loaders: ['babel?cacheDirectory'],
       include: path.join(__dirname, 'src')
     }, {
-      test: /\.css/,
-      loader: "style-loader!css-loader"
+      test: /\.css$/,
+      loaders: ['style', 'css']
       //"style-loader!css-loader?modules"
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
