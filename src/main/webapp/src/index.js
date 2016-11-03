@@ -10,6 +10,7 @@ import { Router } from 'react-router';
 import Routes from 'router/router';
 import 'css/bootstrap.css';
 import 'css/bootstrap-theme.css';
+import 'css/bootstrap.overrides.css';
 
 const devTools = process.env.NODE_ENV === 'development' ? <DevTools /> : null;
 
