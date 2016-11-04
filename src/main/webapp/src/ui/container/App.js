@@ -3,20 +3,31 @@ import {connect} from 'react-redux';
 import {fetchStub} from 'actions/stub';
 import FetchDataComponent from 'component/FetchDataComponent';
 import TopNav from 'component/TopNav';
-// import 'style/css/boostrap.css';
+import {browserHistory} from 'react-router';
 
 export class App extends Component {
 
-    render() {
 
+    /**
+     * Callback function to execute on success of fetchStub call.
+     * Prints "Success!" to the console and redirects to the 'hello'
+     * page.
+     */
+    onSuccess = () => {
+        console.log("Success!");
+        browserHistory.push("/hello");
+    };
+
+    render() {
         return (
             <div id="application">
-                {/*<link rel='stylesheet' href='style/css/bootstrap.css' />*/}
                 <TopNav/>
                 {this.props.children}
                 <FetchDataComponent
-                    fetchData={() => this.props.fetchStub()}
-                    data={this.props.data}/>
+                    fetchData={(paramValue, onSuccess) =>
+                        this.props.fetchStub(paramValue, () => onSuccess())}
+                    data={this.props.data}
+                    onSuccess={() => this.onSuccess()}/>
             </div>
         );
     }
