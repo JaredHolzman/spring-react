@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Grid} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {fetchStub} from 'actions/stub';
 import FetchDataComponent from 'component/FetchDataComponent';
@@ -21,13 +22,19 @@ export class App extends Component {
     render() {
         return (
             <div id="application">
-                <TopNav/>
-                {this.props.children}
-                <FetchDataComponent
-                    fetchData={(paramValue, onSuccess) =>
-                        this.props.fetchStub(paramValue, () => onSuccess())}
-                    data={this.props.data}
-                    onSuccess={() => this.onSuccess()}/>
+                <Grid>
+                    <Row>
+                        <TopNav/>
+                        {this.props.children}
+                    </Row>
+                    <Row>
+                        <FetchDataComponent
+                            fetchData={(paramValue, onSuccess) =>
+                                this.props.fetchStub(paramValue, () => onSuccess())}
+                            data={this.props.data}
+                            onSuccess={() => this.onSuccess()}/>
+                    </Row>
+                </Grid>
             </div>
         );
     }
