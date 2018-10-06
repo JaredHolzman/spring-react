@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Grid} from 'react-bootstrap';
+import {Grid, Row} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {fetchStub} from 'actions/stub';
 import FetchDataComponent from 'component/FetchDataComponent';
